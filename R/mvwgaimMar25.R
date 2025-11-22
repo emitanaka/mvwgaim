@@ -27,7 +27,7 @@ mvwgaim.asreml <- function (baseDiag, baseModel, genObj, merge.by = NULL, fix.li
     if (is.null(glines <- genObj$pheno[, merge.by]))
         stop("Genotypic data does not contain column \"", merge.by,
              "\".")
-    if (is.null(plines <- phenoData[, merge.by]))
+    if (is.null(plines <- phenoData[, merge.by, drop = TRUE]))
         stop("Phenotypic data does not contain column \"", merge.by,
              "\".")
     if (all(is.na(match(glines, plines))))
